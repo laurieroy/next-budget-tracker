@@ -5,7 +5,10 @@ This is a budget tracker
 ## Tech Stack
 - React 18 with Next@14
 - Auth: [clerk](https://clerk.com/docs/quickstarts/nextjs)
-- CSS: Tailwind
+- UI 
+  - CSS: Tailwind
+  - Component library: shadcn-ui + lucide react icons
+  - next-theme for light/dark mode 
 
 
 ## Getting Started
