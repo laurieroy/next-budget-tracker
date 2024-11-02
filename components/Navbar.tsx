@@ -4,12 +4,12 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 
+import { cn } from "@/lib/utils";
+import ThemeSwitcherBtn from "./ThemeSwitcherBtn";
 import Logo, { LogoMobile } from "./Logo";
 import { Button, buttonVariants } from "./ui/button";
-import ThemeSwitcherBtn from "./ThemeSwitcherBtn";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 function Navbar() {
@@ -53,6 +53,7 @@ function MobileNavbar() {
             </div>
           </SheetContent>
         </Sheet>
+        
         <div className="flex h-[80px] min-h-[60px] items-center gap-x-4">
           <LogoMobile />
         </div>
@@ -81,6 +82,7 @@ function DesktopNavbar() {
             ))}
           </div>
         </div>
+
         <div className="flex items-center gap-2">
           <ThemeSwitcherBtn />
           <UserButton afterSignOutUrl="/sign-in" />
@@ -90,9 +92,13 @@ function DesktopNavbar() {
   );
 }
 
-type Props = { link: string; label: string; clickCallback?: () => void };
+type NavbarItemProps = {
+  link: string;
+  label: string;
+  clickCallback?: () => void;
+};
 
-function NavbarItem({ link, label, clickCallback }: Props) {
+function NavbarItem({ link, label, clickCallback }: NavbarItemProps) {
   const pathname = usePathname();
   const isActive = pathname === link;
 
@@ -111,8 +117,9 @@ function NavbarItem({ link, label, clickCallback }: Props) {
       >
         {label}
       </Link>
+
       {isActive && (
-        <div className="absolute -bottom-[2px] left-1/2 hidden h-[2px] w-[80%] -translate-x-1/2 rounded-xl bg-foreground md:block"></div>
+        <div className="absolute -bottom-[2px] left-1/2 hidden h-[2px] w-[80%] -translate-x-1/2 rounded-xl bg-foreground md:block" />
       )}
     </div>
   );

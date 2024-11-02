@@ -4,7 +4,7 @@ This is a budget tracker
 
 ## Tech Stack
 - React 18 with Next@14
-- Auth: [clerk](https://clerk.com/docs/quickstarts/nextjs)
+- Auth: [clerk](https://clerk.com/docs/quickstarts/nextjs) 5
 - UI 
   - CSS: Tailwind
   - Component library: shadcn-ui + lucide react icons
@@ -16,7 +16,7 @@ This is a budget tracker
 First, clone the repo:
 
 ```bash
-git clone 
+git clone TBD
 ```
 
 Install dependencies:
@@ -51,7 +51,7 @@ pnpm i @prisma/client
 Initialize the db: (this creates the schema at prisma/schema.prisma)
 
 ```bash
-npx prisma init
+pnpx prisma init
 ```
 
 - Set the DATABASE_URL in the .env file to point to your existing database. If your database has no tables yet, read https://pris.ly/d/getting-started
@@ -62,10 +62,8 @@ npx prisma init
 
 - Run `prisma generate` to generate the Prisma Client. You can then start querying your database.
 
-- Migrate schema: `npx prisma migrate dev` where dev is what you named the db
+- Migrate schema: `pnpx prisma migrate dev` where dev is what you named the db
 
 - To view schema in studio:
-`npx prisma studio`
+`pnpx prisma studio`
 
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

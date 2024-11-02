@@ -1,7 +1,7 @@
-import Navbar from "@/components/Navbar"
 import { ReactNode } from "react"
+import Navbar from "@/components/Navbar"
 
-function layout({ children }: { children: ReactNode }) {
+export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
     <div className="relative flex h-screen w-full flex-col">
       <Navbar />
@@ -9,4 +9,3 @@ function layout({ children }: { children: ReactNode }) {
     </div>
   )
 }
-export default layout
