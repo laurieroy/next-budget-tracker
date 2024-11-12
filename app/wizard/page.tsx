@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs/server";
+import { RedirectToSignIn } from "@clerk/nextjs";
+
 import Logo from "@/components/Logo";
 
 import {
@@ -17,7 +18,7 @@ import { Separator } from "@/components/ui/separator";
 async function page() {
   const user = await currentUser();
   if (!user) {
-    redirect("/sign-in");
+    RedirectToSignIn("/sign-in");
   }
 
   return (
@@ -37,7 +38,7 @@ async function page() {
       </div>
 
       <Separator />
-      
+
       <Card className="w-full">
         <CardHeader className="">
           <CardTitle className="">Currency</CardTitle>
@@ -52,7 +53,7 @@ async function page() {
       </Card>
 
       <Separator />
-      
+
       <Button className="w-full" asChild>
         <Link href={"/"}>I&apos;m done! Take me to the dashboard</Link>
       </Button>
